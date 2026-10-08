@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+coverage/
+dist/
+cache/
+artifacts/
+broadcast/
+lib/forge-std/
+.env
+.env.local
+*.log
+*.tsbuildinfo
+.DS_Store

@@ -1,0 +1,9 @@
+{
+  "scenario": "INSUFFICIENT",
+  "agent_id": "agent://demo/treasury-01",
+  "policy_version": "1.0",
+  "intent": { "chain_id": 10143, "to": "0x1111111111111111111111111111111111111111", "value": "1000000000000000", "function": "ping(bytes32)", "args": ["0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"] },
+  "execution_payload": { "chain_id": 10143, "to": "0x1111111111111111111111111111111111111111", "value": "1000000000000000", "function": "ping(bytes32)", "args": ["0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"] },
+  "policy": { "version": "1.0", "allowed_chains": [10143], "allowed_targets": ["0x1111111111111111111111111111111111111111"], "max_value": "2000000000000000", "allowed_methods": ["ping(bytes32)"], "required_evidence_types": ["simulation"] },
+  "evidence": []
+}

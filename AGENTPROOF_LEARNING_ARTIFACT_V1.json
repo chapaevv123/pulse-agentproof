@@ -1,0 +1,36 @@
+{
+  "artifact_version": "1.0",
+  "project": "Pulse AgentProof",
+  "status": "local_mvp_verified",
+  "capabilities_earned": [
+    {
+      "capability": "deterministic agent-intent normalization",
+      "evidence": "tests/verifier.test.ts canonical representation and repeatability tests"
+    },
+    {
+      "capability": "pre-execution policy gating",
+      "evidence": "SAFE, TAMPERED, and INSUFFICIENT fixture verdict tests"
+    },
+    {
+      "capability": "intent-vs-execution integrity binding",
+      "evidence": "material-field hash mutation and exact reason-code tests"
+    },
+    {
+      "capability": "EVM receipt anchoring contract implementation",
+      "evidence": "solc compilation test and authored Foundry behavior tests"
+    },
+    {
+      "capability": "Monad testnet integration configuration",
+      "evidence": "chain ID/RPC integration test and testnet-only deployment guard"
+    },
+    {
+      "capability": "public hackathon packaging",
+      "evidence": "README, architecture, deployment runbook, MIT license, disclosure, and security scan"
+    }
+  ],
+  "not_yet_earned": [
+    "deployed onchain accountability receipt",
+    "real post-execution transaction binding"
+  ],
+  "evidence_note": "No onchain capability is claimed before owner-approved Monad Testnet transactions exist."
+}
