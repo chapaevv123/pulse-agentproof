@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./fonts.css";
+import "./onchain-proof.css";
 
 export const metadata: Metadata = {
   title: "Pulse AgentProof — Deterministic Accountability on Monad",

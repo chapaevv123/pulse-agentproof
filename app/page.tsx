@@ -1,9 +1,11 @@
+import React from "react";
 import safe from "@/fixtures/safe.json";
 import tampered from "@/fixtures/tampered.json";
 import insufficient from "@/fixtures/insufficient.json";
 import { verify } from "@/src/agentproof/verifier";
 import type { VerificationInput } from "@/src/agentproof/types";
 import { ProofConsole } from "./proof-console";
+import { OnchainProof } from "./onchain-proof";
 
 export default function Home() {
   const scenarios = [safe, tampered, insufficient].map((fixture) => ({
@@ -30,6 +32,8 @@ export default function Home() {
 
       <ProofConsole scenarios={scenarios} />
 
+      <OnchainProof />
+
       <section className="trust-strip">
         <div><span>01</span><h2>Exact intent</h2><p>Canonical serialization commits to chain, destination, value, method, and arguments.</p></div>
         <div><span>02</span><h2>Independent gate</h2><p>Policy and evidence checks are deterministic. No model participates in the verdict.</p></div>
@@ -40,4 +44,3 @@ export default function Home() {
     </main>
   );
 }
-

@@ -4,7 +4,7 @@
 
 Pulse AgentProof is a standalone, public-safe hackathon project for Monad Metropolis Track 04 — Trust, Identity & AI Infrastructure. It proves whether an exact proposed blockchain action satisfied an explicit policy and evidence boundary before execution.
 
-> Local MVP status: implementation and simulations only. No wallet is connected, no contract has been broadcast, and placeholders must not be presented as onchain evidence.
+> Real proof status: `ActionReceiptRegistry` is deployed on Monad Testnet and the first deterministic SAFE receipt has been anchored successfully. No arbitrary agent action was executed by that anchor.
 
 ## Problem
 
@@ -28,6 +28,20 @@ The flow is: raw intent → normalized action → policy and evidence checks →
 
 The registry targets Monad Testnet (`chainId 10143`) and uses its EVM compatibility for standard Solidity, Foundry, and viem workflows. A compact receipt anchor makes the chain part of the accountability boundary rather than a decorative log. Monad's fast-confirming, low-friction environment is a practical fit for frequent agent decisions; this project makes no unsupported performance claims.
 
+The deterministic verifier runs locally, commits the normalized intent, action, policy, evidence, verdict, and reason codes to hashes, and encodes those exact commitments for `ActionReceiptRegistry`. Monad then provides the durable public timestamp, emitting account, block context, and immutable event record. The complete machine-readable proof is in [`MONAD_REAL_ONCHAIN_PROOF_V1.json`](MONAD_REAL_ONCHAIN_PROOF_V1.json), with a human-readable audit record in [`MONAD_REAL_ONCHAIN_PROOF_V1.md`](MONAD_REAL_ONCHAIN_PROOF_V1.md).
+
+### Real Monad Testnet proof
+
+| Record | Value |
+| --- | --- |
+| Registry contract | [`0x1607Af4E1DA1C06362871443d2e95C367B984Efa`](https://testnet.monadexplorer.com/address/0x1607Af4E1DA1C06362871443d2e95C367B984Efa) |
+| Deployment transaction | [`0xeed1eaae5777a17aac05676bdc5bca925f1ae3114204c9aa32485eed08ef35ba`](https://testnet.monadexplorer.com/tx/0xeed1eaae5777a17aac05676bdc5bca925f1ae3114204c9aa32485eed08ef35ba) |
+| First real ALLOW receipt | [`0xfa348cb087af2de24df2147270a84702b5b0cf774c5d669b51533f96d50bcf5d`](https://testnet.monadexplorer.com/tx/0xfa348cb087af2de24df2147270a84702b5b0cf774c5d669b51533f96d50bcf5d) |
+| Receipt block | `69237676` |
+| Proof classification | `REAL_MONAD_ALLOW_RECEIPT_ANCHOR` |
+
+This transaction anchors the verifier's accountability receipt. It is not an arbitrary-call execution transaction. The receipt's `executionTxHash` remains unbound, and the project does not claim that a downstream agent action was executed.
+
 ## Smart contract
 
 `ActionReceiptRegistry` stores immutable decision commitments and emits `ActionReceiptAnchored`. An allowed receipt can later receive a one-time execution transaction hash through `bindExecution`. Large JSON and private context remain offchain.
@@ -40,7 +54,7 @@ A concise recording sequence is provided in [docs/DEMO.md](docs/DEMO.md).
 
 ## Security model
 
-Testnet only. No arbitrary-call executor, private key, automatic spending, or mainnet path is included. Only `ALLOW` receipts may bind execution, and the demo allowlist is explicit. Deployment, transaction broadcast, wallet connection, repository publication, and portal submission remain owner approval gates.
+Testnet only. No arbitrary-call executor, private key, automatic spending, or mainnet path is included. Only `ALLOW` receipts may bind execution, and the demo allowlist is explicit. Any additional transaction broadcast, wallet connection, repository publication, or portal submission remains an owner approval gate.
 
 ## What AgentProof does NOT guarantee
 
@@ -64,7 +78,7 @@ Copy `.env.example` to `.env.local` only when local chain configuration is neede
 
 ## Deployment
 
-No deployment has occurred. Follow [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) only after explicit owner approval. After broadcast, add the verified contract address, deployment transaction, SAFE anchor transaction, and explorer links here.
+The registry and first SAFE receipt anchor are deployed at the addresses above. The runbook in [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) remains available for reproducibility, but no further broadcast is authorized by this documentation update.
 
 ## Hackathon build disclosure
 

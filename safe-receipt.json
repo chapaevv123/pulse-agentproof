@@ -1,0 +1,43 @@
+
+> pulse-agentproof@0.1.0 receipt:safe
+> tsx tools/print-safe-receipt.ts
+
+{
+  "receipt": {
+    "schemaVersion": "1.0",
+    "agentId": "agent://demo/treasury-01",
+    "intentHash": "0x9c98af89382980532613c294edfe4b63af12bced206543893611a47885368657",
+    "actionHash": "0x6239f17b40740ae2d041f2e5efac314917dbc75c6e87fc035f41f1e664d7d6d9",
+    "policyHash": "0x621db527d576407724d90bb6325414afbbd0c4a48f370f21d3409243d9991708",
+    "evidenceHash": "0xc32a09c4928d4b2494059a477bb27a4b4c0c1935f5b7416b6b673b3e79c2a94d",
+    "verdict": "ALLOW",
+    "reasonCodeHash": "0x518674ab2b227e5f11e9084f615d57663cde47bce1ba168b4c19c7ee22a73d70",
+    "scenario": "SAFE",
+    "normalizedAction": {
+      "chainId": 10143,
+      "to": "0x1111111111111111111111111111111111111111",
+      "value": "1000000000000000",
+      "method": "ping(bytes32)",
+      "args": [
+        "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    },
+    "executionAction": {
+      "chainId": 10143,
+      "to": "0x1111111111111111111111111111111111111111",
+      "value": "1000000000000000",
+      "method": "ping(bytes32)",
+      "args": [
+        "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    },
+    "executionActionHash": "0x6239f17b40740ae2d041f2e5efac314917dbc75c6e87fc035f41f1e664d7d6d9",
+    "reasonCodes": [],
+    "receiptId": "0x79a9a5682a2aea39e179de4af0871d50a6b0b07dc507c5b82b299b05547509ec",
+    "chainId": 10143,
+    "registryAddress": null,
+    "anchorTxHash": null,
+    "executionTxHash": null
+  },
+  "anchorCalldata": "0xc6ee351879a9a5682a2aea39e179de4af0871d50a6b0b07dc507c5b82b299b05547509ec4e6be90aa268bbd8f3a0fb95205d5015be0c0d3157e4c20c8667d8a9441acf899c98af89382980532613c294edfe4b63af12bced206543893611a478853686576239f17b40740ae2d041f2e5efac314917dbc75c6e87fc035f41f1e664d7d6d9621db527d576407724d90bb6325414afbbd0c4a48f370f21d3409243d9991708c32a09c4928d4b2494059a477bb27a4b4c0c1935f5b7416b6b673b3e79c2a94d0000000000000000000000000000000000000000000000000000000000000001518674ab2b227e5f11e9084f615d57663cde47bce1ba168b4c19c7ee22a73d70"
+}

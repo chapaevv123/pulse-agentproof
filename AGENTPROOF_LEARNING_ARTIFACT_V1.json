@@ -1,7 +1,7 @@
 {
   "artifact_version": "1.0",
   "project": "Pulse AgentProof",
-  "status": "local_mvp_verified",
+  "status": "real_monad_allow_receipt_anchored",
   "capabilities_earned": [
     {
       "capability": "deterministic agent-intent normalization",
@@ -24,13 +24,28 @@
       "evidence": "chain ID/RPC integration test and testnet-only deployment guard"
     },
     {
+      "capability": "Monad testnet deployment",
+      "evidence": "ActionReceiptRegistry deployment transaction 0xeed1eaae5777a17aac05676bdc5bca925f1ae3114204c9aa32485eed08ef35ba at block 69236960"
+    },
+    {
+      "capability": "deterministic receipt anchoring",
+      "evidence": "successful ALLOW anchor transaction 0xfa348cb087af2de24df2147270a84702b5b0cf774c5d669b51533f96d50bcf5d at block 69237676"
+    },
+    {
+      "capability": "local-to-onchain commitment binding",
+      "evidence": "MONAD_REAL_ONCHAIN_PROOF_V1.json binds the locally reproduced receipt, action, policy, evidence, and reason-code hashes to the onchain event encoding"
+    },
+    {
+      "capability": "real protocol proof recovery",
+      "evidence": "ActionReceiptAnchored topics, encoded data, and decoded fields recovered from the contract ABI and anchored SAFE calldata"
+    },
+    {
       "capability": "public hackathon packaging",
       "evidence": "README, architecture, deployment runbook, MIT license, disclosure, and security scan"
     }
   ],
   "not_yet_earned": [
-    "deployed onchain accountability receipt",
     "real post-execution transaction binding"
   ],
-  "evidence_note": "No onchain capability is claimed before owner-approved Monad Testnet transactions exist."
+  "evidence_note": "The real receipt anchor is documented separately from arbitrary action execution; no execution transaction hash is claimed or bound."
 }

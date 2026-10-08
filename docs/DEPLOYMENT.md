@@ -1,6 +1,6 @@
 # Monad Testnet deployment runbook
 
-This runbook is preparation only. Do not broadcast until the owner explicitly approves the dedicated test-wallet use.
+The first owner-approved deployment and SAFE receipt anchor are complete. Their canonical evidence is recorded in `MONAD_REAL_ONCHAIN_PROOF_V1.json`. This runbook is retained for reproducibility; do not broadcast any additional transaction without a new explicit owner approval.
 
 ## Preconditions
 
